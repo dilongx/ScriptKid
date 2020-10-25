@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'com.dilongx.scriptkid'
+version '1.0.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+}
+
+dependencies {
+    // Script engine
+    def rhino_version = "1.7.13"
+    implementation 'org.luaj:luaj-jse:3.0.1' // Lua的Java实现
+    implementation "org.mozilla:rhino:${rhino_version}" // JavaScript的Java实现
+    implementation "org.mozilla:rhino-runtime:${rhino_version}" // Rhino运行时
+    implementation "org.mozilla:rhino-engine:${rhino_version}" // Rhino脚本引擎
+    implementation 'org.jruby:jruby-complete:9.2.13.0' // Ruby的Java实现
+    implementation 'org.python:jython-standalone:2.7.2' // Python的Java实现
+    implementation 'org.codehaus.groovy:groovy-all:3.0.6' // Groovy脚本语言
+    // implementation 'org.apache.commons:commons-jexl3:3.1' // Java表达式语言(DSL)
+    implementation 'org.apache-extras.beanshell:bsh:2.0b6' // BeanShell脚本语言
+
+    // implementation "com.sun.phobos:jsr223-api:1.0" // Android项目中使用
+    // Android项目中除LuaJ与Rhino外皆疑似依赖冲突无法通过编译
+
+    // Test
+    testCompile 'junit:junit:4.13.1'
+}
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
