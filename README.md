@@ -1,18 +1,13 @@
 # ScriptKid
 
-**ScriptEngineManager & 各种ScriptEngine的使用示例**
-
 > **项目地址：** http://github.com/dilongx/ScriptKid
 
-
-
-# 1.前言密语
-
+**用ScriptEngineManager以相同的方式来调用各种各样的ScriptEngine**
 
 
 
 
-# 2.那些Java系脚本语言
+# 0x1 那些Java写的脚本引擎
 
 |  引擎      |  语言      |                           官网                             |                           开源地址                           |
 | :-------: | :--------:| :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -29,7 +24,7 @@
 
 
 
-# 3.使用各脚本引擎前的准备工作
+# 0x2 使用各脚本引擎前的准备工作
 
 **导入Gradle项目依赖**
 
@@ -50,7 +45,9 @@ implementation 'org.apache-extras.beanshell:bsh:2.0b6' // BeanShell脚本语言
 // Android项目中除LuaJ与Rhino外皆疑似依赖冲突无法通过编译
 ```
 
-## 3.1兼容JSR-223标准的大致步骤
+
+
+## 0x2.1 兼容JSR-223标准的大致步骤
 
 > 除了Kawa其他引擎都自带
 
@@ -69,8 +66,7 @@ implementation 'org.apache-extras.beanshell:bsh:2.0b6' // BeanShell脚本语言
 
 
 
-# 4.使用脚本引擎管理器来运行脚本和与Java交互
-
+# 0x3 使用脚本引擎管理器来运行脚本和与Java交互
 
 > **javax.script.ScriptEngineManager，可以用来统一管理Java写的脚本引擎**
 >
